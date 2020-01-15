@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <h1>Todo list</h1>
+  <div id="main">
+    <div class="main-bar">
+      <h1>Todo list</h1>
+    </div>
     <todo-item
         v-for="item in todoItems"
         v-bind="item"
@@ -10,4 +12,4 @@
 </template>
 
 <script src="./script.js"></script>
-<style src="./style.scss" lang="scss" scoped></style>
+<style src="./style.scss" lang="scss"></style>
