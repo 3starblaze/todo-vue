@@ -1,3 +1,5 @@
+import bus from '../bus'
+
 export default {
     name: 'TodoItem',
     props: {
@@ -6,4 +8,9 @@ export default {
         description: String,
         isDone: Boolean,
     },
+    methods: {
+        removeTodoItem: function() {
+            bus.$emit('removeTodoItem', this.id);
+        }
+    }
 }
