@@ -8,6 +8,7 @@
         v-bind="item"
         :key="item.id"
         ></todo-item>
+    <todo-item-create></todo-item-create>
   </div>
 </template>
 

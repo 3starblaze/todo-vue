@@ -1,17 +1,26 @@
 import TodoItem from '../TodoItem/index.vue';
+import TodoItemCreate from '../TodoItemCreate/index.vue';
+
+import bus from '../bus';
 
 export default {
     name: 'App',
     components: {
         'todo-item': TodoItem,
+        'todo-item-create': TodoItemCreate,
+    },
+    created() {
+        bus.$on('createTodoItem', this.createTodoItemHandler);
     },
     data() {
         return {
-            todoItems: [
-                { id: 1, title: "todo1", description: "do1"},
-                { id: 2, title: "todo2", description: "do2"},
-                { id: 3, title: "todo3", description: "do3"},
-            ],
+            todoItems: JSON.parse(localStorage.getItem('todoItems')) || [],
         }
+    },
+    methods: {
+        createTodoItemHandler: function(todoItem) {
+            this.todoItems.push(todoItem);
+            localStorage.setItem('todoItems', JSON.stringify(this.todoItems));
+        },
     },
 }

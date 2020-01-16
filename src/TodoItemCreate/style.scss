@@ -1,0 +1,19 @@
+.todo-item-create {
+
+    .input {
+
+        label {
+            display: block;
+
+            font-size: 1.1em;
+        }
+
+        input, textarea {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+
+            width: 300px;
+            resize: none;
+        }
+    }
+}
