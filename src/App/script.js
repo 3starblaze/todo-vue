@@ -19,6 +19,7 @@ export default {
     },
     methods: {
         createTodoItemHandler: function(todoItem) {
+            todoItem.id = 'todo-item' + this.todoItems.length;
             this.todoItems.push(todoItem);
             localStorage.setItem('todoItems', JSON.stringify(this.todoItems));
         },

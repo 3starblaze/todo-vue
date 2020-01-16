@@ -1,7 +1,7 @@
 export default {
     name: 'TodoItem',
     props: {
-        id: Number,
+        id: String,
         title: String,
         description: String,
         isDone: Boolean,
