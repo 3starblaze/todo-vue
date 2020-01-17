@@ -1,4 +1,21 @@
 .todo-item {
     border-bottom: solid rgba(255, 255, 255, 0.2) 4px;
-    padding: 2px 10px;
+    padding: 10px;
+
+    display: grid;
+    grid-template-rows: 2.5em 1fr;
+    grid-template-columns: 1fr 2.5em;
+
+    button {
+        grid-column: 2;
+        grid-row: 1;
+
+        padding: 2px;
+        background: rgba(255, 255, 255, 0.4);
+        color: #8b0000;
+        font-size: 20px;
+        border: 0;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 }
