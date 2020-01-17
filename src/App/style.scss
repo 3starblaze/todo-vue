@@ -19,6 +19,7 @@ body {
 #main {
     background: rgba(255, 255, 255, 0.2);
     height: calc(100vh - #{2 * $body-padding});
+    overflow: auto;
 }
 
 .main-bar {
