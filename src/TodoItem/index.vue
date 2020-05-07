@@ -3,7 +3,10 @@
     <h2>{{ title }}</h2>
     <p>{{ description }}</p>
 
-    <button @click="removeTodoItem">X</button>
+    <div class="buttons">
+      <button @click="editTodoItem" class="edit">Edit</button>
+      <button @click="removeTodoItem" class="remove">X</button>
+    </div>
   </div>
 </template>
 
