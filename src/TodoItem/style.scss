@@ -3,8 +3,23 @@
     padding: 10px;
 
     display: grid;
-    grid-template-rows: 2.5em 1fr;
     grid-template-columns: 1fr auto;
+
+    input {
+        display: block;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    textarea {
+        display: block;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+
+    }
 
     .buttons {
         grid-column: 2;
