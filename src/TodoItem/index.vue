@@ -2,9 +2,9 @@
   <div :id="'todo-item' + id" class="todo-item">
     <div @dblclick="toggleEditMode" class="todo-item-content">
       <h2 v-if="!isEditMode">{{ title }}</h2>
-      <input v-else :value="title">
+      <input v-else v-model="title">
       <p v-if="!isEditMode">{{ description }}</p>
-      <textarea v-else>{{ description }}</textarea>
+      <textarea v-else v-model="description"></textarea>
     </div>
 
     <div class="buttons">

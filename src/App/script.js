@@ -12,6 +12,7 @@ export default {
     created() {
         bus.$on('createTodoItem', this.createTodoItemHandler);
         bus.$on('removeTodoItem', this.removeTodoItemHandler);
+        bus.$on('editTodoItem', this.editTodoItemHandler);
     },
     data() {
         return {
@@ -30,5 +31,10 @@ export default {
             this.todoItems.splice(todoIndex, 1);
             localStorage.setItem('todoItems', JSON.stringify(this.todoItems));
         },
+        editTodoItemHandler: function(todoItem) {
+            this.removeTodoItemHandler(todoItem.id)
+            this.todoItems.push(todoItem);
+            localStorage.setItem('todoItems', JSON.stringify(this.todoItems));
+        }
     },
 }
