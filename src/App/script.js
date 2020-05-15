@@ -12,6 +12,7 @@ export default {
     created() {
         bus.$on('createTodoItem', this.createTodoItemHandler);
         bus.$on('removeTodoItem', this.removeTodoItemHandler);
+        bus.$on('editTodoItem', this.editTodoItemHandler);
     },
     data() {
         return {
@@ -30,5 +31,11 @@ export default {
             this.todoItems.splice(todoIndex, 1);
             localStorage.setItem('todoItems', JSON.stringify(this.todoItems));
         },
+        editTodoItemHandler: function(todoItem) {
+            let todoIndex = this.todoItems.findIndex(item => item.id == todoItem.id);
+            if (todoIndex == -1) throw `No todo item with index ${id}`;
+            this.todoItems[todoIndex] = todoItem;
+            localStorage.setItem('todoItems', JSON.stringify(this.todoItems));
+        }
     },
 }

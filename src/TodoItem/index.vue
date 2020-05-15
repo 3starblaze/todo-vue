@@ -1,9 +1,15 @@
 <template>
   <div :id="'todo-item' + id" class="todo-item">
-    <h2>{{ title }}</h2>
-    <p>{{ description }}</p>
+    <div @dblclick="toggleEditMode" class="todo-item-content">
+      <h2 v-if="!isEditMode">{{ title }}</h2>
+      <input v-else v-model="title">
+      <p v-if="!isEditMode">{{ description }}</p>
+      <textarea v-else v-model="description"></textarea>
+    </div>
 
-    <button @click="removeTodoItem">X</button>
+    <div class="buttons">
+      <button @click="removeTodoItem" class="remove">X</button>
+    </div>
   </div>
 </template>
 
