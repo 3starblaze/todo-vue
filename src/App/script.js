@@ -32,8 +32,9 @@ export default {
             localStorage.setItem('todoItems', JSON.stringify(this.todoItems));
         },
         editTodoItemHandler: function(todoItem) {
-            this.removeTodoItemHandler(todoItem.id)
-            this.todoItems.push(todoItem);
+            let todoIndex = this.todoItems.findIndex(item => item.id == todoItem.id);
+            if (todoIndex == -1) throw `No todo item with index ${id}`;
+            this.todoItems[todoIndex] = todoItem;
             localStorage.setItem('todoItems', JSON.stringify(this.todoItems));
         }
     },
