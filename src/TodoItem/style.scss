@@ -24,6 +24,7 @@
     .buttons {
         grid-column: 2;
         grid-row: 1;
+        display: grid;
 
         * {
             background: rgba(255, 255, 255, 0.4);
@@ -42,4 +43,8 @@
             padding: 2px;
         }
     }
+}
+
+.done {
+    background: rgba(0, 0, 0, .4);
 }
